@@ -2,6 +2,8 @@ library common;
 
 export 'src/common_base.dart';
 
+const String API_URL = 'https://dart-socket.herokuapp.com/';
+
 class SocketEvent {
   final String name;
   final String room;
@@ -29,8 +31,7 @@ class SocketEvent {
       name: json['name'],
       room: json['room'],
       text: json['text'],
-      type: SocketEventType.values
-          .firstWhere((element) => element.toString() == json['type']),
+      type: SocketEventType.values.firstWhere((element) => element.toString() == json['type']),
     );
   }
 }
